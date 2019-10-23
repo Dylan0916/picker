@@ -19,7 +19,12 @@ export default class Picker extends EventEmitter {
       data: [],
       title: '',
       selectedIndex: null,
-      showCls: 'show'
+      showCls: 'show',
+      confirmText: '確定',
+      cancelText: '取消',
+      confirmBtnStyle: '',
+      cancelBtnStyle: '',
+      titleStyle: ''
     };
 
     extend(this.options, options);
@@ -27,7 +32,12 @@ export default class Picker extends EventEmitter {
     this.data = this.options.data;
     this.pickerEl = createDom(pickerTemplate({
       data: this.data,
-      title: this.options.title
+      title: this.options.title,
+      confirmText: this.options.confirmText,
+      cancelText: this.options.cancelText,
+      confirmBtnStyle: this.options.confirmBtnStyle,
+      cancelBtnStyle: this.options.cancelBtnStyle,
+      titleStyle: this.options.titleStyle
     }));
 
     document.body.appendChild(this.pickerEl);
